@@ -6,7 +6,7 @@
 // ── 1. RATE DATA ─────────────────────────────────────────────
 // ⚡ Only edit here. Everything on the page reads from this object.
 const exchangeRates = {
-  USD: 2800,
+  USD: 4500,
   SAR: 747,
   EGP: 56
 };
