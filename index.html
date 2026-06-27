@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="جنيهنا — Daily Sudanese Pound Exchange Rates" />
+  <meta name="theme-color" content="#1976D2" />
+  <title>جنيهنا – SDG Exchange Rates</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── LOADING SCREEN ── -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-body">
+      <div class="loader-flag">🇸🇩</div>
+      <p class="loader-name">جنيهنا</p>
+      <div class="loader-track"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ── APP SHELL ── -->
+  <div class="app" id="app">
+
+    <!-- STATUS BAR SPACER (safe area) -->
+    <div class="safe-top"></div>
+
+    <!-- ── TOP BAR ── -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <span id="hdr-date" class="topbar-date"></span>
+      </div>
+      <button class="dark-btn" id="darkBtn" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon" id="darkIcon"></i>
+      </button>
+    </header>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="hero-flag">🇸🇩</div>
+      <h1 class="hero-title">جنيهنا</h1>
+      <p class="hero-sub">Daily Sudanese Pound Exchange Rates</p>
+      <div class="hero-meta">
+        <span class="meta-pill">
+          <i class="fa-solid fa-circle-dot pulse-dot"></i>
+          Live
+        </span>
+        <span class="meta-pill" id="updated-pill">
+          <i class="fa-regular fa-clock"></i>
+          Updated <span id="updated-time">--:--</span>
+        </span>
+      </div>
+    </section>
+
+    <!-- ── CARDS ── -->
+    <main class="cards-wrap" id="cardsWrap">
+
+      <!-- USD -->
+      <article class="rate-card" id="card-USD" data-code="USD">
+        <div class="card-face">
+          <div class="card-left">
+            <span class="card-flag">🇺🇸</span>
+            <div class="card-info">
+              <span class="card-name">US Dollar</span>
+              <span class="card-code">USD</span>
+            </div>
+          </div>
+          <div class="card-right">
+            <span class="card-rate" id="rate-USD">—</span>
+            <span class="card-label">SDG</span>
+          </div>
+          <div class="card-chevron"><i class="fa-solid fa-chevron-down" id="chev-USD"></i></div>
+        </div>
+        <!-- Expanded Calculator -->
+        <div class="calc-panel" id="calc-USD">
+          <div class="calc-inner">
+            <div class="calc-direction" id="dir-USD">
+              <button class="dir-btn active" data-dir="to-sdg" data-code="USD">USD → SDG</button>
+              <button class="dir-btn" data-dir="from-sdg" data-code="USD">SDG → USD</button>
+            </div>
+            <div class="calc-field">
+              <label class="calc-label" id="calc-label-USD">Amount in USD</label>
+              <div class="calc-input-wrap">
+                <span class="calc-prefix" id="calc-prefix-USD">USD</span>
+                <input class="calc-input" id="calc-input-USD" type="number" placeholder="0" min="0" inputmode="decimal" />
+              </div>
+            </div>
+            <div class="calc-result" id="calc-result-USD">
+              <span class="result-num" id="result-num-USD">—</span>
+              <span class="result-unit" id="result-unit-USD">SDG</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SAR -->
+      <article class="rate-card" id="card-SAR" data-code="SAR">
+        <div class="card-face">
+          <div class="card-left">
+            <span class="card-flag">🇸🇦</span>
+            <div class="card-info">
+              <span class="card-name">Saudi Riyal</span>
+              <span class="card-code">SAR</span>
+            </div>
+          </div>
+          <div class="card-right">
+            <span class="card-rate" id="rate-SAR">—</span>
+            <span class="card-label">SDG</span>
+          </div>
+          <div class="card-chevron"><i class="fa-solid fa-chevron-down" id="chev-SAR"></i></div>
+        </div>
+        <div class="calc-panel" id="calc-SAR">
+          <div class="calc-inner">
+            <div class="calc-direction" id="dir-SAR">
+              <button class="dir-btn active" data-dir="to-sdg" data-code="SAR">SAR → SDG</button>
+              <button class="dir-btn" data-dir="from-sdg" data-code="SAR">SDG → SAR</button>
+            </div>
+            <div class="calc-field">
+              <label class="calc-label" id="calc-label-SAR">Amount in SAR</label>
+              <div class="calc-input-wrap">
+                <span class="calc-prefix" id="calc-prefix-SAR">SAR</span>
+                <input class="calc-input" id="calc-input-SAR" type="number" placeholder="0" min="0" inputmode="decimal" />
+              </div>
+            </div>
+            <div class="calc-result" id="calc-result-SAR">
+              <span class="result-num" id="result-num-SAR">—</span>
+              <span class="result-unit" id="result-unit-SAR">SDG</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EGP -->
+      <article class="rate-card" id="card-EGP" data-code="EGP">
+        <div class="card-face">
+          <div class="card-left">
+            <span class="card-flag">🇪🇬</span>
+            <div class="card-info">
+              <span class="card-name">Egyptian Pound</span>
+              <span class="card-code">EGP</span>
+            </div>
+          </div>
+          <div class="card-right">
+            <span class="card-rate" id="rate-EGP">—</span>
+            <span class="card-label">SDG</span>
+          </div>
+          <div class="card-chevron"><i class="fa-solid fa-chevron-down" id="chev-EGP"></i></div>
+        </div>
+        <div class="calc-panel" id="calc-EGP">
+          <div class="calc-inner">
+            <div class="calc-direction" id="dir-EGP">
+              <button class="dir-btn active" data-dir="to-sdg" data-code="EGP">EGP → SDG</button>
+              <button class="dir-btn" data-dir="from-sdg" data-code="EGP">SDG → EGP</button>
+            </div>
+            <div class="calc-field">
+              <label class="calc-label" id="calc-label-EGP">Amount in EGP</label>
+              <div class="calc-input-wrap">
+                <span class="calc-prefix" id="calc-prefix-EGP">EGP</span>
+                <input class="calc-input" id="calc-input-EGP" type="number" placeholder="0" min="0" inputmode="decimal" />
+              </div>
+            </div>
+            <div class="calc-result" id="calc-result-EGP">
+              <span class="result-num" id="result-num-EGP">—</span>
+              <span class="result-unit" id="result-unit-EGP">SDG</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      <p>© 2026 <span class="footer-brand">جنيهنا</span></p>
+      <p class="footer-heart">Made with <i class="fa-solid fa-heart"></i> for Sudan</p>
+    </footer>
+
+  </div><!-- /app -->
+
+  <!-- ── BACK TO TOP ── -->
+  <button class="btt" id="btt" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
