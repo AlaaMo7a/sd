@@ -6,9 +6,9 @@
 // ── 1. RATE DATA ─────────────────────────────────────────────
 // ⚡ Only edit here. Everything on the page reads from this object.
 const exchangeRates = {
-  USD: 4700,
-  SAR: 747,
-  EGP: 56
+  USD: 5100,
+  SAR: 1400,
+  EGP: 104
 };
 
 // ── 2. CURRENCY METADATA ─────────────────────────────────────
